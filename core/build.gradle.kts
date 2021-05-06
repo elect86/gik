@@ -10,8 +10,8 @@ repositories {
 //    maven("https://oss.sonatype.org/content/repositories/snapshots/")
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "com.github.elect86"
+version = "0.0.1"
 
 dependencies {
 
@@ -49,3 +49,11 @@ dependencies {
 //        maxRetries = 1
 //    }
 //}
+
+
+publishing {
+    publications.create<MavenPublication>("mavenJava") {
+        artifactId = "gik-core"
+        from(components["java"])
+    }
+}

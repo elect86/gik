@@ -10,17 +10,17 @@ plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version embeddedKotlinVersion
     // jitpack & gradle portal
     `maven-publish`
 
     `kotlin-dsl`
 
-    id("com.gradle.plugin-publish") version "0.12.0"
+    id("com.gradle.plugin-publish") version "0.16.0"
 }
 
-group = "com.github.elect86"
-version = "0.0.2"
+group = "elect86"
+version = "0.0.1"
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
     // Align versions of all Kotlin components
-    implementation(platform(kotlin("bom")))
+    implementation(platform(kotlin("bom", embeddedKotlinVersion)))
 
     // Use the Kotlin JDK 8 standard library.
     implementation(kotlin("stdlib-jdk8"))
@@ -53,8 +53,7 @@ pluginBundle {
 gradlePlugin {
     // Define the plugin
     plugins.create("gik") {
-        //        id = "sciJava.greeting"
-        id = "gik"
+        id = "elect86.gik"
         displayName = "gik plugin"
         description = "The Kotlin way to use Git"
         implementationClass = "main.GikPlugin"
@@ -81,6 +80,7 @@ val check by tasks.getting(Task::class) {
 
 publishing {
     publications.register("mavenJava", MavenPublication::class) {
+        artifactId = "gik"
         from(components["java"])
     }
 }

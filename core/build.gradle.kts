@@ -1,13 +1,13 @@
+
 plugins {
     `maven-publish`
     `java-library`
-    kotlin("jvm") version "1.5.0-RC"
+    kotlin("jvm") version embeddedKotlinVersion
     //  id 'org.gradle.test-retry'
 }
 
 repositories {
     mavenCentral()
-//    maven("https://oss.sonatype.org/content/repositories/snapshots/")
 }
 
 group = "com.github.elect86"
@@ -49,7 +49,6 @@ dependencies {
 //        maxRetries = 1
 //    }
 //}
-
 
 publishing {
     publications.create<MavenPublication>("mavenJava") {

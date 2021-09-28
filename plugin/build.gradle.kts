@@ -31,6 +31,13 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation(kotlin("test-junit"))
+
+    api("org.eclipse.jgit:org.eclipse.jgit:5.9.0.202009080501-r")
+    //    api("org.eclipse.jgit:org.eclipse.jgit:5.11.0.202103091610-r")
+
+    // logging
+    testImplementation("org.slf4j:slf4j-api:1.7.2")
+    runtimeOnly("org.slf4j:slf4j-simple:1.7.2")
 }
 
 pluginBundle {

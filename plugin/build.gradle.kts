@@ -74,7 +74,7 @@ val check by tasks.getting(Task::class) {
     dependsOn(functionalTest)
 }
 
-java {
-    withJavadocJar()
-    withSourcesJar()
-}
+//java {
+//    withJavadocJar()w
+//    withSourcesJar()
+//}

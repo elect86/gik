@@ -26,7 +26,7 @@ class FunctionalTest {
     fun `with no repo, plugin sets gik to null`() {
         buildFile += """
             plugins {
-                id 'gik'
+                id 'elect86.gik'
             }
     
             task doStuff {
@@ -48,7 +48,7 @@ class FunctionalTest {
 
         buildFile += """
             plugins {
-                id 'gik'
+                id 'elect86.gik'
             }
             
             task doStuff {

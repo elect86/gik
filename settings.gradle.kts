@@ -5,3 +5,8 @@ include("core", "plugin")
 
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+gradle.rootProject {
+    group = "elect86"
+    version = "0.0.2"
+}

@@ -227,7 +227,7 @@ class Gik(
             return treeParser
         }
 
-        fun convertChangeType(changeType: CT): DiffEntry.ChangeType = DiffEntry.ChangeType.valueOf(changeType.name.lowercase())
+        fun convertChangeType(changeType: CT): DiffEntry.ChangeType = DiffEntry.ChangeType.valueOf(changeType.name.toLowerCase())
 
         val cmd = repo.jgit.diff()
         val resolve = ResolveService(repo)

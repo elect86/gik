@@ -7,25 +7,11 @@
  */
 
 plugins {
+    `my-plugin`
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
-    // Apply the Kotlin JVM plugin to add support for Kotlin.
-    kotlin("jvm") version embeddedKotlinVersion
-    // jitpack & gradle portal
-    `maven-publish`
-
-    `kotlin-dsl`
 
     id("com.gradle.plugin-publish") version "0.16.0"
-}
-
-group = "elect86"
-version = "0.0.1"
-
-repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
 }
 
 dependencies {
@@ -76,16 +62,4 @@ val functionalTest by tasks.registering(Test::class) {
 val check by tasks.getting(Task::class) {
     // Run the functional tests as part of `check`
     dependsOn(functionalTest)
-}
-
-publishing {
-    publications.register("mavenJava", MavenPublication::class) {
-        artifactId = "gik"
-        from(components["java"])
-    }
-}
-
-java {
-    withJavadocJar()
-    withSourcesJar()
 }

@@ -1,17 +1,7 @@
 
 plugins {
-    `maven-publish`
-    `java-library`
-    kotlin("jvm") version embeddedKotlinVersion
-    //  id 'org.gradle.test-retry'
+    `my-plugin`
 }
-
-repositories {
-    mavenCentral()
-}
-
-group = "com.github.elect86"
-version = "0.0.1"
 
 dependencies {
 
@@ -24,9 +14,6 @@ dependencies {
     // logging
     testImplementation("org.slf4j:slf4j-api:1.7.2")
     runtimeOnly("org.slf4j:slf4j-simple:1.7.2")
-
-    // testing
-//    testImplementation("junit:junit:4.13")
 
     // Use the Kotlin test library.
     testImplementation(kotlin("test"))
@@ -49,10 +36,3 @@ dependencies {
 //        maxRetries = 1
 //    }
 //}
-
-publishing {
-    publications.create<MavenPublication>("mavenJava") {
-        artifactId = "gik-core"
-        from(components["java"])
-    }
-}
